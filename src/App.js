@@ -28,9 +28,24 @@ function App() {
       id: nanoid,
       text: text,
       date: date.toLocaleDateString(),
+      isEdited: false,
     };
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
+  };
+
+  const editNotes = (id, text) => {
+    console.log(id)
+    console.log(text)
+    const newNote = [...notes];
+    for (let i = 0; i < notes.length; i++) {
+      if (id === newNote[i].id) {
+        newNote[i].isEdited = false;
+        newNote[i].text = text;
+        break;
+      }
+    }
+    setNotes(newNote);
   };
 
   useEffect(() => {
@@ -47,6 +62,18 @@ function App() {
     setNotes(deleted);
   };
 
+  const editNote = (id) => {
+    const newNote = [...notes];
+    for (let i = 0; i < newNote.length; i++) {
+      if (id === newNote[i].id) {
+        newNote[i].isEdited = true;
+        console.log(newNote[i]);
+        break;
+      }
+    }
+    setNotes(newNote);
+  };
+
   return (
     <div className="container">
       <Search handleSearchText={setSearchText} />
@@ -56,6 +83,8 @@ function App() {
         )}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
+        handleEdit={editNote}
+        handleEditNote={editNotes}
       />
     </div>
   );

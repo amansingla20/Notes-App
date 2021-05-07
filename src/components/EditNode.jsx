@@ -1,8 +1,8 @@
 import './AddNote.css';
 import {useState} from 'react';
 
-const AddNote=({handleAddNote})=>{
-    const [noteText, setNoteText] = useState('');
+const EditNote=({note, handleEditNote})=>{
+    const [noteText, setNoteText] = useState(note.text);
     const characterLimit= 200;
 
     const handleChange=(event)=>{
@@ -13,7 +13,7 @@ const AddNote=({handleAddNote})=>{
 
     const handleSave= ()=>{
         if(noteText.trim().length>0)
-        handleAddNote(noteText);
+        handleEditNote(note.id , noteText);
         setNoteText('');
     }
 
@@ -31,4 +31,4 @@ const AddNote=({handleAddNote})=>{
     );
 }
 
-export default AddNote;
+export default EditNote;
