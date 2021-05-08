@@ -35,8 +35,8 @@ function App() {
   };
 
   const editNotes = (id, text) => {
-    console.log(id)
-    console.log(text)
+    console.log(id);
+    console.log(text);
     const newNote = [...notes];
     for (let i = 0; i < notes.length; i++) {
       if (id === newNote[i].id) {
@@ -76,6 +76,7 @@ function App() {
 
   return (
     <div className="container">
+      <h1 className="heading">Notes</h1>
       <Search handleSearchText={setSearchText} />
       <NoteList
         notes={notes.filter((note) =>

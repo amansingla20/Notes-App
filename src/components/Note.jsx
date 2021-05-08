@@ -1,6 +1,7 @@
 import './Note.css';
 import React from 'react'
 import {MdDeleteForever} from 'react-icons/md';
+import EditIcon from '@material-ui/icons/Edit';
 
 const Note = ({id, text, date, handleEdit, handleDeleteNote}) => {
     return (
@@ -8,7 +9,7 @@ const Note = ({id, text, date, handleEdit, handleDeleteNote}) => {
             <span>{text}</span>
             <div className="note-footer">
                 <small>{date}</small>
-                <button onClick={()=> handleEdit(id)}>Edit</button>
+                <EditIcon onClick={()=>handleEdit(id) } className='edit-icon'/>
                 <MdDeleteForever onClick ={()=> handleDeleteNote(id)} className='delete-icon' size='1.3rem'/>
             </div>
         </div>

@@ -15,3 +15,13 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.edit-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 140px;
+}
+
+.edit-icon:hover {
+  cursor: pointer;
+}
