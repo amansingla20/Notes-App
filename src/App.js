@@ -25,7 +25,7 @@ function App() {
   const addNote = (text) => {
     const date = new Date();
     const newNote = {
-      id: nanoid,
+      id: nanoid(),
       text: text,
       date: date.toLocaleDateString(),
       isEdited: false,
@@ -65,6 +65,8 @@ function App() {
   const editNote = (id) => {
     const newNote = [...notes];
     for (let i = 0; i < newNote.length; i++) {
+      console.log(id);
+      console.log(newNote[i].id);
       if (id === newNote[i].id) {
         newNote[i].isEdited = true;
         console.log(newNote[i]);

@@ -13,6 +13,7 @@ const NoteList = ({notes, handleAddNote, handleDeleteNote,  handleEdit, handleEd
                 <EditNote key ={key} note={note} handleEditNote={handleEditNote}/>
                 )}
                 else { 
+                    console.log('This is here...',note.id);
                     return ( <Note key= {key} id={note.id} text={note.text} date= {note.date}
                     handleDeleteNote={handleDeleteNote}
                     handleEdit={handleEdit}

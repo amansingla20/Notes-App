@@ -9,7 +9,7 @@ const Note = ({id, text, date, handleEdit, handleDeleteNote}) => {
             <span>{text}</span>
             <div className="note-footer">
                 <small>{date}</small>
-                <EditIcon onClick={()=>handleEdit(id) } className='edit-icon'/>
+                <EditIcon onClick={()=>handleEdit(id)} className='edit-icon'/>
                 <MdDeleteForever onClick ={()=> handleDeleteNote(id)} className='delete-icon' size='1.3rem'/>
             </div>
         </div>
