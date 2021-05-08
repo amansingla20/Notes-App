@@ -18,8 +18,8 @@
 
 .edit-icon {
   display: flex;
-  align-items: center;
-  margin-left: 140px;
+  align-items: right;
+  margin-left: 165px;
 }
 
 .edit-icon:hover {
